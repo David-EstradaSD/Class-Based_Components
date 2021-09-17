@@ -1,6 +1,7 @@
 import { Component, Fragment, useState, useEffect } from "react";
-import classes from './UserFinder.module.css';
+import classes from "./UserFinder.module.css";
 import Users from "./Users";
+import ErrorBoundary from "./ErrorBoundary";
 
 const DUMMY_USERS = [
   { id: "u1", name: "Max" },
@@ -13,14 +14,14 @@ class UserFinder extends Component {
     super();
     this.state = {
       filteredUsers: DUMMY_USERS,
-      searchTerm: '',
+      searchTerm: "",
     };
   }
 
-//   componentDidMount() { // We would use this if we didn't have DUMMY DATA, instead an empty array of data
-//       // Send Http request...
-//       this.setState({filteredUsers: DUMMY_USERS });
-//   }
+  //   componentDidMount() { // We would use this if we didn't have DUMMY DATA, instead an empty array of data
+  //       // Send Http request...
+  //       this.setState({filteredUsers: DUMMY_USERS });
+  //   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchTerm !== this.state.searchTerm) {
@@ -39,8 +40,12 @@ class UserFinder extends Component {
   render() {
     return (
       <Fragment>
-        <input type="search" onChange={this.searchChangeHandler.bind(this)} />
+        <div className={classes.finder}>
+          <input type="search" onChange={this.searchChangeHandler.bind(this)} />
+        </div>
+        <ErrorBoundary>
         <Users users={this.state.filteredUsers} />
+        </ErrorBoundary>
       </Fragment>
     );
   }
