@@ -2,13 +2,13 @@
 
 
 ### Overview
-This was a chapter in the Udemy: "React - The Complete Course" that taught about how to create ( the now outdated ) class-based components.
+This was a chapter in the Udemy: "React - The Complete Course" that taught about how to create ( the now outdated ) class-based components. This was accomplished by converting the modern React standard "function components" into their class-based component alternatives. 
 
 ### Technologies
-JavaScript, React
-OOP fundamentals:
-Inheritance
-Re-usable components
+* JavaScript, React
+* OOP fundamentals:
+  * Inheritance
+  * Re-usable components
 
 ### How to Run
 This app can be run on local host. I haven't deployed it anywhere as it's a basic app.
